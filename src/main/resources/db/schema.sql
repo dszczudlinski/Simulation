@@ -1,0 +1,11 @@
+CREATE TABLE simulation (
+id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+startDate DATE NOT NULL,
+duration INT(6) NOT NULL,
+frequency VARCHAR(10) NOT NULL,
+firstname VARCHAR(50) NOT NULL,
+lastname VARCHAR(50) NOT NULL,
+birthDate DATE NOT NULL,
+phoneNumber VARCHAR(50) NOT NULL,
+email VARCHAR(50)
+) 
