@@ -1,11 +1,22 @@
 CREATE TABLE simulation (
-id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-startDate DATE NOT NULL,
-duration INT(6) NOT NULL,
-frequency VARCHAR(10) NOT NULL,
-firstname VARCHAR(50) NOT NULL,
-lastname VARCHAR(50) NOT NULL,
-birthDate DATE NOT NULL,
-phoneNumber VARCHAR(50) NOT NULL,
-email VARCHAR(50)
-) 
+  id INT(6) AUTO_INCREMENT,
+  start_date DATE NOT NULL,
+  duration INT(6) NOT NULL,
+  frequency VARCHAR(10) NOT NULL,
+  first_name VARCHAR(50) NOT NULL,
+  last_name VARCHAR(50) NOT NULL,
+  birth_date DATE NOT NULL,
+  phone_number VARCHAR(50) NOT NULL,
+  email VARCHAR(50),
+  PRIMARY KEY(id)
+);
+
+CREATE TABLE insurance (
+  id INT(6) AUTO_INCREMENT,
+  code VARCHAR(10) NOT NULL,
+  sum DECIMAL(10,2) NOT NULL,
+  base_product VARCHAR(1) NOT NULL,
+  sim_id INT(6),
+  PRIMARY KEY(id),
+  FOREIGN KEY (sim_id) references simulation(id)
+);

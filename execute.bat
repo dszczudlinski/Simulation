@@ -1,1 +1,1 @@
-java -jar target/simulation-0.0.1-SNAPSHOT.jar
+java -jar target/simulation-0.0.1-SNAPSHOT.jar >> log.txt

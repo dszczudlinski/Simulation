@@ -5,6 +5,7 @@ import lombok.Data;
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Data
@@ -12,7 +13,7 @@ import java.util.Date;
 public class Simulation {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private BigDecimal id;
 
     private Date startDate;
@@ -30,4 +31,8 @@ public class Simulation {
     private String phoneNumber;
 
     private String email;
+
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "simId")
+    private List<Insurance> insurance;
 }
