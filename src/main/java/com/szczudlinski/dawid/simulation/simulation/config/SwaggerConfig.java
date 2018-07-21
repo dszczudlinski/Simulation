@@ -30,7 +30,7 @@ public class SwaggerConfig {
     private ApiInfo apiInfo() {
         return new ApiInfo(
                 "\"SIMULATION :: REST API\"",
-                "Dokumentacja interfejsu RESTful'owego microserwisu Simulation",
+                "Dokumentacja interfejsu RESTful'owego microserwisu MakeOfferCommand",
                 "0.1",
                 "Terms of service",
                 new Contact("Dawid Szczudliński", "", ""),

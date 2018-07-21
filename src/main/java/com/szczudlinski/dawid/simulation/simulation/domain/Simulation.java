@@ -16,6 +16,8 @@ public class Simulation {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private BigDecimal id;
 
+    private BigDecimal simulationNumber;
+
     private Date startDate;
 
     private BigDecimal duration;
@@ -34,5 +36,5 @@ public class Simulation {
 
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "simId")
-    private List<Insurance> insurance;
+    private List<Insurance> insuranceList;
 }

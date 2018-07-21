@@ -1,5 +1,6 @@
 CREATE TABLE simulation (
   id INT(6) AUTO_INCREMENT,
+  simulation_number VARCHAR(10) NOT NULL,
   start_date DATE NOT NULL,
   duration INT(6) NOT NULL,
   frequency VARCHAR(10) NOT NULL,

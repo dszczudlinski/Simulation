@@ -9,6 +9,7 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 
 @RestController
@@ -32,6 +33,20 @@ public class SimulationRest {
     @ResponseBody
     public String addSimulation(@RequestBody Simulation simulation){
         simulationRepository.save(simulation);
+        return "OK";
+    }
+
+    @RequestMapping(value = "/{simulationNumber}", method = RequestMethod.GET)
+    @ResponseBody
+    public Simulation getSimulation(@PathVariable String simulationNumber) {
+        Optional<Simulation> simulation = simulationRepository.getBySimulationNumber(simulationNumber);
+        return simulation.get();
+    }
+
+    @RequestMapping(value = "/makeOffer/{simulationNumber}", method = RequestMethod.GET)
+    @ResponseBody
+    public String makeOffer(@PathVariable String simulationNumber) {
+        Optional<Simulation> simulation = simulationRepository.getBySimulationNumber(simulationNumber);
         return "OK";
     }
 }
